@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iter Capimus — Tu futuro en Nueva Zelanda</title>
+<meta name="description" content="Asesoría educativa independiente para estudiar en Nueva Zelanda: intercambios, posgrados, carreras de grado y programas de idiomas. María Uhrle, Nelson, NZ.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Forum&display=swap" rel="stylesheet">
+<style>
+  /* ———— TOKENS ———— */
+  :root{
+    --gold: #DCA54A;
+    --gold-dark: #D09A40;
+    --gold-pale: #F0E6C5;
+    --navy: #0F172A;
+    --ink: #4A4A4A;
+    --near-black: #141004;
+    --cream: #FAF5E5;
+    --white: #FFFFFF;
+    --sage: #8AAF97;
+    --sage-pale: #EAF1EC;
+    --whatsapp: #20B038;
+    --whatsapp-dark: #1a9430;
+    --heading-font: 'Poppins', sans-serif;
+    --accent-font: 'Forum', serif;
+    --body-font: 'Poppins', sans-serif;
+    --radius-card: 17px;
+    --radius-md: 12px;
+    --radius-sm: 8px;
+    --radius-pill: 999px;
+    --shadow-sm: 0 2px 10px rgba(20,16,4,0.06), 0 1px 2px rgba(20,16,4,0.05);
+    --shadow-md: 0 8px 28px rgba(20,16,4,0.09), 0 2px 8px rgba(138,175,151,0.15);
+    --shadow-lg: 0 20px 50px rgba(20,16,4,0.14), 0 6px 18px rgba(220,165,74,0.14);
+  }
+
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--body-font);
+    font-size:16px;
+    line-height:1.7;
+    color:var(--ink);
+    background:var(--cream);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{display:block;max-width:100%;}
+  a{text-decoration:none;color:inherit;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;}
+  ul{list-style:none;}
+
+  h1,h2,h3,h4,h5,h6{font-family:var(--heading-font);font-weight:500;color:var(--navy);line-height:1.25;}
+  h1{font-size:clamp(2.2rem,4.2vw,3.6rem);font-weight:500;letter-spacing:-0.02em;line-height:1.18;}
+  h2{font-size:clamp(1.8rem,3vw,2.5rem);letter-spacing:-0.02em;}
+  h3{font-size:1.25rem;font-weight:600;}
+
+  .container{max-width:1180px;margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:0.78rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--gold-dark);
+  }
+  .accent-serif{font-family:var(--accent-font);font-weight:400;letter-spacing:0.01em;}
+
+  .section{padding:88px 0;}
+  .section-alt{background:var(--white);}
+  @media (max-width:768px){ .section{padding:56px 0;} }
+
+  /* ———— BUTTONS ———— */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:15px 30px;border-radius:var(--radius-pill);
+    font-weight:600;font-size:0.95rem;letter-spacing:0.01em;
+    transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease, background-color 0.2s ease;
+    white-space:nowrap;
+  }
+  .btn-gold{
+    background:linear-gradient(155deg,var(--gold) 0%,var(--gold-dark) 100%);
+    color:var(--near-black);
+    box-shadow:var(--shadow-md);
+  }
+  .btn-gold:hover{transform:translateY(-2px) scale(1.02);box-shadow:var(--shadow-lg);}
+  .btn-gold:active{transform:translateY(0) scale(0.99);}
+  .btn-gold:focus-visible{outline:3px solid var(--navy);outline-offset:3px;}
+
+  .btn-outline{
+    background:transparent;color:var(--white);
+    border:1.5px solid rgba(255,255,255,0.55);
+  }
+  .btn-outline:hover{background:rgba(255,255,255,0.12);border-color:#fff;transform:translateY(-2px);}
+  .btn-outline:focus-visible{outline:3px solid #fff;outline-offset:3px;}
+
+  .btn-sm{padding:11px 22px;font-size:0.85rem;}
+
+  .btn-whatsapp{
+    background:var(--whatsapp);color:#fff;box-shadow:0 6px 18px rgba(32,176,56,0.28);
+  }
+  .btn-whatsapp:hover{background:var(--whatsapp-dark);transform:translateY(-2px);box-shadow:0 10px 24px rgba(32,176,56,0.32);}
+  .btn-whatsapp:focus-visible{outline:3px solid var(--navy);outline-offset:3px;}
+
+  /* ———— HEADER ———— */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(250,245,229,0.88);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(20,16,4,0.06);
+  }
+  .header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1180px;margin:0 auto;}
+  .logo-link{display:flex;align-items:center;gap:10px;}
+  .logo-link img{height:46px;width:auto;}
+  nav.main-nav{display:flex;align-items:center;gap:34px;}
+  nav.main-nav a{
+    font-size:0.95rem;font-weight:500;color:var(--navy);
+    position:relative;padding:4px 0;
+    transition:color 0.2s ease;
+  }
+  nav.main-nav a::after{
+    content:'';position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--gold);
+    transition:width 0.25s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  nav.main-nav a:hover{color:var(--gold-dark);}
+  nav.main-nav a:hover::after{width:100%;}
+  nav.main-nav a:focus-visible{outline:2px solid var(--gold-dark);outline-offset:4px;border-radius:2px;}
+
+  .header-actions{display:flex;align-items:center;gap:16px;}
+  .hamburger{
+    display:none;flex-direction:column;gap:5px;padding:8px;
+  }
+  .hamburger span{width:24px;height:2px;background:var(--navy);border-radius:2px;transition:transform 0.25s ease, opacity 0.2s ease;}
+  .hamburger:focus-visible{outline:2px solid var(--gold-dark);outline-offset:2px;}
+
+  .mobile-nav{
+    display:none;
+    background:var(--white);
+    border-top:1px solid rgba(20,16,4,0.06);
+    overflow:hidden;max-height:0;
+    transition:max-height 0.3s ease;
+  }
+  .mobile-nav.open{max-height:420px;}
+  .mobile-nav ul{padding:8px 24px 20px;display:flex;flex-direction:column;gap:2px;}
+  .mobile-nav a{display:block;padding:12px 4px;font-weight:500;border-bottom:1px solid rgba(20,16,4,0.05);}
+  .mobile-nav .btn{margin-top:14px;width:100%;}
+
+  @media (max-width:920px){
+    nav.main-nav{display:none;}
+    .header-actions .btn-whatsapp.desktop-only{display:none;}
+    .hamburger{display:flex;}
+    .mobile-nav{display:block;}
+  }
+
+  /* ———— HERO ———— */
+  .hero{
+    position:relative;
+    min-height:92vh;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    text-align:center;
+    background-image:
+      linear-gradient(180deg, rgba(15,23,42,0.45) 0%, rgba(15,23,42,0.55) 40%, rgba(15,23,42,0.78) 100%),
+      url('assets/hero-bg.jpg');
+    background-size:cover;
+    background-position:50% 80%;
+    background-repeat:no-repeat;
+    padding:160px 24px 90px;
+    color:#fff;
+  }
+  .hero::after{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(ellipse at 50% 0%, rgba(220,165,74,0.16), transparent 55%);
+    pointer-events:none;
+  }
+  .hero-content{position:relative;max-width:780px;}
+  .hero-eyebrow{color:var(--gold);}
+  .hero h1{color:#fff;margin-top:18px;text-shadow:0 4px 24px rgba(0,0,0,0.25);}
+  .hero-sub{margin-top:22px;font-size:1.05rem;color:rgba(255,255,255,0.92);font-weight:500;}
+  .hero-links{
+    margin-top:14px;display:flex;flex-direction:column;gap:10px;align-items:center;
+  }
+  .hero-links a{
+    font-size:1rem;font-weight:600;color:#fff;
+    border-bottom:1.5px solid var(--gold);padding-bottom:2px;
+    transition:color 0.2s ease, border-color 0.2s ease;
+  }
+  .hero-links a:hover{color:var(--gold);}
+  .hero-cta{margin-top:36px;}
+
+  /* ———— PROGRAM CARDS ———— */
+  .section-head{max-width:680px;margin:0 auto 52px;text-align:center;}
+  .section-head p{margin-top:14px;font-size:1.05rem;color:var(--ink);}
+
+  .programs-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
+  }
+  @media (max-width:980px){ .programs-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:640px){ .programs-grid{grid-template-columns:1fr;} }
+
+  .program-card{
+    background:var(--white);
+    border:4px solid var(--sage);
+    border-radius:var(--radius-card);
+    padding:30px 26px 26px;
+    display:flex;flex-direction:column;
+    box-shadow:var(--shadow-sm);
+    transition:transform 0.3s cubic-bezier(0.34,1.2,0.64,1), box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  .program-card:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow-lg);
+    border-color:var(--gold);
+  }
+  .badge{
+    align-self:flex-start;
+    background:var(--sage-pale);
+    color:#3f6350;
+    font-size:0.76rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;
+    padding:6px 14px;border-radius:var(--radius-pill);
+    margin-bottom:14px;
+  }
+  .program-card h3{margin-bottom:10px;}
+  .program-card p{color:var(--ink);flex:1;margin-bottom:22px;}
+  .program-card .btn{align-self:flex-start;}
+
+  /* ———— WHY NZ ———— */
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  @media (max-width:980px){ .why-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:640px){ .why-grid{grid-template-columns:1fr;} }
+  .why-grid .why-card:nth-child(4){grid-column:span 1;}
+
+  .why-card{
+    background:var(--white);border:4px solid var(--sage);border-radius:var(--radius-card);
+    overflow:hidden;
+    box-shadow:var(--shadow-sm);
+    transition:transform 0.3s cubic-bezier(0.34,1.2,0.64,1), box-shadow 0.3s ease;
+  }
+  .why-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
+  .why-media{position:relative;aspect-ratio:4/3;overflow:hidden;}
+  .why-media img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;mix-blend-mode:normal;}
+  .why-card:hover .why-media img{transform:scale(1.06);}
+  .why-media::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(15,23,42,0) 55%, rgba(15,23,42,0.5) 100%);
+  }
+  .why-body{padding:22px 24px 26px;}
+  .why-body h3{margin-bottom:8px;}
+  .why-body p{font-size:0.95rem;color:var(--ink);}
+
+  /* ———— HOW WE WORK ———— */
+  .steps{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:20px 40px;
+    counter-reset:step;
+  }
+  @media (max-width:768px){ .steps{grid-template-columns:1fr;} }
+  .step{
+    display:flex;gap:20px;padding:26px 6px;
+    border-bottom:1px solid rgba(20,16,4,0.08);
+  }
+  .step-num{
+    flex-shrink:0;width:48px;height:48px;border-radius:50%;
+    background:var(--navy);color:var(--gold);
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--accent-font);font-size:1.3rem;
+    box-shadow:0 6px 16px rgba(15,23,42,0.22);
+  }
+  .step h3{margin-bottom:6px;}
+  .step p{font-size:0.96rem;color:var(--ink);}
+
+  /* ———— ABOUT MARIA ———— */
+  .about-grid{
+    display:grid;grid-template-columns:0.85fr 1.15fr;gap:64px;align-items:center;
+  }
+  @media (max-width:900px){ .about-grid{grid-template-columns:1fr;gap:36px;} }
+  .about-photo{
+    position:relative;border-radius:24px;overflow:hidden;
+    box-shadow:var(--shadow-lg), 0 0 0 1.5px var(--gold), 0 0 0 10px var(--white);
+    aspect-ratio:4/5;
+    margin:14px;
+  }
+  .about-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;}
+  .about-text .eyebrow{margin-bottom:14px;}
+  .about-text h2{margin-bottom:22px;}
+  .about-text p{margin-bottom:18px;color:var(--ink);}
+  .about-text p:last-child{margin-bottom:0;}
+  .about-signoff{
+    margin-top:26px;font-family:var(--accent-font);font-size:1.4rem;color:var(--navy);
+  }
+
+  /* ———— TESTIMONIALS ———— */
+  .testimonials-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;}
+  @media (max-width:768px){ .testimonials-grid{grid-template-columns:1fr;} }
+  .testimonial-card{
+    background:var(--white);border-radius:var(--radius-card);
+    border:1px solid rgba(20,16,4,0.07);
+    padding:32px 30px;box-shadow:var(--shadow-sm);
+    position:relative;
+  }
+  .quote-mark{
+    font-family:Georgia,serif;font-size:3.2rem;color:var(--gold-pale);
+    line-height:1;position:absolute;top:14px;right:24px;
+  }
+  .testimonial-card p{font-size:1rem;color:var(--navy);font-style:italic;margin-bottom:18px;position:relative;}
+  .testimonial-author{font-size:0.88rem;font-weight:600;color:var(--gold-dark);letter-spacing:0.02em;}
+
+  /* ———— FAQ ———— */
+  .faq-group{max-width:840px;margin:0 auto;}
+  .faq-group + .faq-group{margin-top:48px;}
+  .faq-group h3.faq-group-title{
+    font-family:var(--accent-font);font-weight:400;font-size:1.5rem;
+    color:var(--navy);margin-bottom:18px;
+  }
+  details.faq-item{
+    background:var(--white);border:1px solid rgba(20,16,4,0.08);border-radius:var(--radius-md);
+    margin-bottom:12px;overflow:hidden;
+    transition:border-color 0.2s ease;
+  }
+  details.faq-item[open]{border-color:var(--gold);}
+  details.faq-item summary{
+    list-style:none;cursor:pointer;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:20px 24px;font-weight:600;color:var(--navy);font-size:1rem;
+  }
+  details.faq-item summary::-webkit-details-marker{display:none;}
+  .faq-icon{
+    flex-shrink:0;width:26px;height:26px;border-radius:50%;
+    background:var(--sage-pale);color:var(--sage);
+    display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:700;
+    transition:transform 0.25s ease, background-color 0.2s ease, color 0.2s ease;
+  }
+  details.faq-item[open] .faq-icon{transform:rotate(45deg);background:var(--gold);color:#fff;}
+  .faq-content{padding:0 24px 22px;font-size:0.96rem;color:var(--ink);}
+  .faq-content strong{color:var(--navy);}
+  .faq-content ul{margin-top:8px;}
+  .faq-content li{padding-left:0;margin-bottom:6px;}
+
+  /* ———— CONTACT ———— */
+  .contact-wrap{
+    background:var(--navy);
+    border-radius:28px;
+    padding:64px 56px;
+    display:grid;grid-template-columns:1fr 1fr;gap:56px;
+    position:relative;overflow:hidden;
+  }
+  .contact-wrap::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(ellipse at 100% 0%, rgba(220,165,74,0.18), transparent 55%);
+    pointer-events:none;
+  }
+  @media (max-width:860px){ .contact-wrap{grid-template-columns:1fr;padding:44px 26px;border-radius:20px;} }
+  .contact-intro{color:#fff;position:relative;}
+  .contact-intro h2{color:#fff;margin-bottom:16px;}
+  .contact-intro p{color:rgba(255,255,255,0.8);margin-bottom:28px;}
+  .contact-whatsapp-note{
+    display:inline-flex;align-items:center;gap:10px;
+    color:rgba(255,255,255,0.75);font-size:0.9rem;
+  }
+
+  form.contact-form{position:relative;display:flex;flex-direction:column;gap:16px;}
+  .field label{display:block;font-size:0.85rem;font-weight:600;color:rgba(255,255,255,0.85);margin-bottom:8px;}
+  .field input,.field textarea{
+    width:100%;padding:14px 16px;border-radius:var(--radius-sm);
+    border:1.5px solid rgba(255,255,255,0.16);
+    background:rgba(255,255,255,0.06);color:#fff;font-family:inherit;font-size:0.95rem;
+    transition:border-color 0.2s ease, background-color 0.2s ease;
+  }
+  .field textarea{resize:vertical;min-height:110px;}
+  .field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,0.4);}
+  .field input:focus,.field textarea:focus{
+    outline:none;border-color:var(--gold);background:rgba(255,255,255,0.1);
+  }
+  .contact-form .btn{margin-top:6px;width:100%;}
+  .form-note{font-size:0.78rem;color:rgba(255,255,255,0.45);margin-top:2px;}
+
+  /* ———— FOOTER ———— */
+  footer{background:var(--near-black);color:rgba(255,255,255,0.7);padding:56px 0 28px;}
+  .footer-top{
+    display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap;
+    padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:24px;
+  }
+  .footer-brand img{height:44px;margin-bottom:14px;background:var(--cream);padding:6px 12px;border-radius:var(--radius-pill);}
+  .footer-brand p{max-width:320px;font-size:0.9rem;color:rgba(255,255,255,0.55);}
+  .footer-social{display:flex;gap:14px;}
+  .footer-social a{
+    width:40px;height:40px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    border:1.5px solid rgba(255,255,255,0.2);color:#fff;font-size:1rem;
+    transition:background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  }
+  .footer-social a:hover{background:var(--sage);border-color:var(--sage);transform:translateY(-3px);}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+    font-size:0.82rem;color:rgba(255,255,255,0.45);
+  }
+  .footer-bottom a:hover{color:var(--gold);}
+  .footer-license{font-size:0.78rem;color:rgba(255,255,255,0.35);margin-top:4px;}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity 0.6s ease, transform 0.6s cubic-bezier(0.16,1,0.3,1);}
+  .reveal.is-visible{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#inicio" class="logo-link">
+      <img src="assets/logo.png" alt="Iter Capimus">
+    </a>
+    <nav class="main-nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#programas">Programas Educativos</a>
+      <a href="#como-trabajamos">Cómo Trabajamos</a>
+      <a href="#sobre-nosotros">Sobre Nosotros</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-whatsapp btn-sm desktop-only" href="https://wa.me/64275505656" target="_blank" rel="noopener">Contactar</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#programas">Programas Educativos</a></li>
+      <li><a href="#como-trabajamos">Cómo Trabajamos</a></li>
+      <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="container" style="padding-bottom:16px;">
+      <a class="btn btn-whatsapp" href="https://wa.me/64275505656" target="_blank" rel="noopener">Contactar por WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<section id="inicio" class="hero">
+  <div class="hero-content">
+    <span class="eyebrow hero-eyebrow">Inscripciones 2027</span>
+    <h1>Tu futuro en Nueva Zelanda comienza en 2027</h1>
+    <p class="hero-sub">Inscripciones abiertas para nuestras experiencias exclusivas:</p>
+    <div class="hero-links">
+      <a href="assets/pdf/Programa-Ingles-Enero-2027.pdf" download target="_blank" rel="noopener">Enero 2027-NZ- Veranear aprendiendo ingles</a>
+      <a href="https://wa.me/64275505656?text=ProgramaEnero2027" target="_blank" rel="noopener">Intercambio &amp; Rugby Nelson College – Abril 2027</a>
+    </div>
+    <div class="hero-cta">
+      <a href="#contacto" class="btn btn-gold">Reservar Consulta Gratuita 2027</a>
+    </div>
+  </div>
+</section>
+
+<section id="programas" class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Programas Educativos</span>
+      <h2 style="margin-top:10px;">Programas Educativos</h2>
+      <p>Ofrecemos asesoría para una amplia gama de programas educativos en Nueva Zelanda, desde cursos de idiomas hasta programas de posgrado.</p>
+    </div>
+
+    <div class="programs-grid">
+      <div class="program-card reveal">
+        <span class="badge">Inscripciones abiertas</span>
+        <h3>Intercambio &amp; Rugby Nelson College – Abril 2027</h3>
+        <p>Programa de 10 semanas para jóvenes (14–18 años).</p>
+        <a href="https://wa.me/64275505656?text=RugbyNelsonCollege" target="_blank" rel="noopener" class="btn btn-gold btn-sm">Leer más</a>
+      </div>
+
+      <div class="program-card reveal">
+        <span class="badge">Inscripciones abiertas</span>
+        <h3>Nelson Summer Experience – Enero 2027</h3>
+        <p>Una experiencia de 4 semanas diseñada para adolescentes o para la familia en la ciudad más soleada de NZ.</p>
+        <a href="https://wa.me/64275505656?text=NelsonSummerExperience" target="_blank" rel="noopener" class="btn btn-gold btn-sm">Leer más</a>
+      </div>
+
+      <div class="program-card reveal">
+        <h3>Posgrados</h3>
+        <p>Maestrías y doctorados en instituciones de prestigio mundial.</p>
+        <a href="https://wa.me/64275505656?text=Posgrados" target="_blank" rel="noopener" class="btn btn-gold btn-sm">Leer más</a>
+      </div>
+
+      <div class="program-card reveal">
+        <h3>Carreras de Grado</h3>
+        <p>Licenciaturas en las mejores universidades de Nueva Zelanda.</p>
+        <a href="https://wa.me/64275505656?text=CarrerasDeGrado" target="_blank" rel="noopener" class="btn btn-gold btn-sm">Leer más</a>
+      </div>
+
+      <div class="program-card reveal">
+        <h3>Cursos Técnicos y Cortos</h3>
+        <p>Diplomas, certificados y programas de corta duración para el desarrollo profesional.</p>
+        <a href="https://wa.me/64275505656?text=CursosTecnicos" target="_blank" rel="noopener" class="btn btn-gold btn-sm">Leer más</a>
+      </div>
+
+      <div class="program-card reveal">
+        <h3>Estudios Secundarios</h3>
+        <p>Programas de secundaria en colegios neozelandeses de excelencia.</p>
+        <a href="https://wa.me/64275505656?text=EstudiosSecundarios" target="_blank" rel="noopener" class="btn btn-gold btn-sm">Leer más</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Un país que enamora</span>
+      <h2 style="margin-top:10px;">¿Por qué Nueva Zelanda?</h2>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-media"><img src="assets/teacher.png" alt="Profesora explicando a su estudiante frente a una computadora"></div>
+        <div class="why-body">
+          <h3>Calidad Educativa</h3>
+          <p>Colegios y Universidades con programas innovadores y prestigio internacional.</p>
+        </div>
+      </div>
+
+      <div class="why-card reveal">
+        <div class="why-media"><img src="assets/cycling.avif" alt="Estudiante en bicicleta cerca de un campus universitario"></div>
+        <div class="why-body">
+          <h3>Seguridad</h3>
+          <p>Ciudades pequeñas y seguras con comunidades acogedoras y diversas.</p>
+        </div>
+      </div>
+
+      <div class="why-card reveal">
+        <div class="why-media"><img src="assets/kayaking.jpg" alt="Kayak en el mar, vista aérea de la costa de Nueva Zelanda"></div>
+        <div class="why-body">
+          <h3>Naturaleza Increíble</h3>
+          <p>Paisajes impresionantes, desde playas hasta montañas, perfectos para aventuras.</p>
+        </div>
+      </div>
+
+      <div class="why-card reveal">
+        <div class="why-media"><img src="assets/rugby.jpg" alt="Jóvenes jugando rugby en un campo"></div>
+        <div class="why-body">
+          <h3>Excelencia Deportiva</h3>
+          <p>Cuna de los All Blacks, Nueva Zelanda es un país con fuerte tradición deportiva. Los programas de entrenamiento e instalaciones de primer nivel atraen a jóvenes deportistas de todo el mundo.</p>
+        </div>
+      </div>
+
+      <div class="why-card reveal">
+        <div class="why-media"><img src="assets/machinery.avif" alt="Profesor trabajando con maquinaria técnica"></div>
+        <div class="why-body">
+          <h3>Oportunidades Laborales</h3>
+          <p>Permisos de trabajo durante y después de estudios con excelentes perspectivas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="como-trabajamos" class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Proceso</span>
+      <h2 style="margin-top:10px;">Cómo Trabajamos</h2>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <div>
+          <h3>Asesoría personalizada</h3>
+          <p>Conversamos sobre tus intereses, objetivos y presupuesto para definir el camino que mejor se adapta a ti.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">2</div>
+        <div>
+          <h3>Selección de institución y programa</h3>
+          <p>Te presento opciones reales y actualizadas según tu perfil: instituciones educativas y programas académicos o deportivos en distintas ciudades de Nueva Zelanda.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">3</div>
+        <div>
+          <h3>Admisión</h3>
+          <p>Te acompaño en todo el proceso de postulación: formularios, documentos, requisitos y comunicación con la institución.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">4</div>
+        <div>
+          <h3>Alojamiento</h3>
+          <p>Me aseguro que el alojamiento propuesto por la institución sea adecuado, particularmente en caso de tratarse de una "host family".</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">5</div>
+        <div>
+          <h3>Visa</h3>
+          <p>Te guío en el trámite de visado de estudiante, asegurando que tengas la documentación correcta y los tiempos claros.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">6</div>
+        <div>
+          <h3>Viaje</h3>
+          <p>Te ayudo a preparar tu llegada: seguro médico, detalles del viaje, alojamiento y checklist final antes de volar.</p>
+        </div>
+      </div>
+      <div class="step reveal" style="grid-column:1/-1;">
+        <div class="step-num">7</div>
+        <div>
+          <h3>Acompañamiento en Nueva Zelanda</h3>
+          <p>Sigo acompañándote durante tu experiencia, en Nelson con apoyo presencial y en el resto de NZ con apoyo remoto.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sobre-nosotros" class="section section-alt">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-photo reveal">
+        <img src="assets/maria-profile.png" alt="María Uhrle, fundadora de Iter Capimus">
+      </div>
+      <div class="about-text reveal">
+        <span class="eyebrow">Sobre Iter Capimus</span>
+        <h2>María Uhrle</h2>
+        <p>Mi nombre es María Uhrle, fundadora de Iter Capimus, asesora de educación internacional y abogada graduada en Nueva Zelanda y Argentina. Resido actualmente en Nelson junto a mi esposo, Jed, y tenemos dos hijos: Marco (17) y Sofía (19).</p>
+        <p>Mi camino en el derecho —especialmente en el área de inmigración— me llevó naturalmente hacia la educación internacional. Hoy trabajo de manera independiente acompañando a jóvenes en sus primeros pasos hacia Nueva Zelanda: elegir la institución adecuada, gestionar la admisión, preparar la visa y guiarlos en cada etapa del proceso.</p>
+        <p>Antes de dedicarme a este ámbito, trabajé varios años como abogada en Nelson Bays Community Law, asistiendo a sectores vulnerables en temas de inmigración, empleo, familia y vivienda. También formé parte de juzgados de familia y equipos interdisciplinarios en mi ciudad natal, Salta, experiencias que me dieron una mirada humana y empática de la vida.</p>
+        <p>Todo esto se refleja en mi forma de trabajar: mi experiencia legal aporta firmeza y claridad en los procesos educativos y migratorios; la investigación constante me permite conocer a fondo el sistema educativo de Aotearoa; y mantener vínculos amplios con instituciones —sin acuerdos de exclusividad— me da la libertad de asesorar de manera verdaderamente independiente, siempre priorizando los intereses del estudiante.</p>
+        <p>Mi compromiso es simple: que cada persona que acompaño se sienta segura, cuidada y acompañada desde el primer mensaje hasta su llegada y adaptación a Nueva Zelanda.</p>
+        <p class="about-signoff accent-serif">— María</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Testimonios</span>
+      <h2 style="margin-top:10px;">Testimonios Recientes</h2>
+      <p>Escuche a nuestros clientes satisfechos que han experimentado la calidad y el valor de nuestros productos y servicios.</p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <span class="quote-mark">&ldquo;</span>
+        <p>Me sentí muy cómoda y muy bien recibida, acompañada en todo momento… La verdad fue una muy linda experiencia que volvería a repetir…</p>
+        <div class="testimonial-author">— Guadalupe (estudiante), 2025</div>
+      </div>
+      <div class="testimonial-card reveal">
+        <span class="quote-mark">&ldquo;</span>
+        <p>La verdad, la experiencia fue espectacular… Volvería a hacerlo cien por cien y lo recomiendo…</p>
+        <div class="testimonial-author">— Justo (estudiante), 2025</div>
+      </div>
+      <div class="testimonial-card reveal">
+        <span class="quote-mark">&ldquo;</span>
+        <p>La escuela, los viajes, la gente, todo muy bueno…</p>
+        <div class="testimonial-author">— Fausto (estudiante), 2025</div>
+      </div>
+      <div class="testimonial-card reveal">
+        <span class="quote-mark">&ldquo;</span>
+        <p>Este año tuve la oportunidad de mandar a Nelson a mi hijo Fausto… Tanto para Fausto como para nosotros fue una experiencia maravillosa que recomendamos cien por cien.</p>
+        <div class="testimonial-author">— María José (mamá de Fausto), 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="section section-alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2 style="margin-top:10px;">Preguntas Frecuentes</h2>
+    </div>
+
+    <div class="faq-group reveal">
+      <details class="faq-item" open>
+        <summary>¿Por qué contratar a Iter Capimus?<span class="faq-icon">+</span></summary>
+        <div class="faq-content">
+          <p>Estudiar en el extranjero es una decisión importante, y tener a alguien que conozca bien el sistema educativo del país donde vas a ir, hace todo mucho más seguro y sencillo, te ahorra tiempo y dinero. Mis objetivos son los siguientes:</p>
+          <p style="margin-top:12px;"><strong>Que tengas una experiencia segura:</strong> Me aseguro que se cumplan los estándares de Pastoral Care tanto por parte de las familias receptoras como por las instituciones. Tu familia tendrá tranquilidad sabiendo que estarás cuidado y con ayuda en tu idioma.</p>
+          <p style="margin-top:12px;"><strong>Que elijas bien:</strong> Te conecto con el programa que mejor se ajuste a tus metas, con información de las opciones académicas, costos reales, requisitos de cada institución, características de la ciudad y alternativas de alojamiento para que tomes la mejor decisión.</p>
+          <p style="margin-top:12px;"><strong>Que vayas con todo bien preparado/a:</strong> Te asesoro sobre documentación, requisitos de admisión y visa de estudiante. Mi experiencia como agente educativo y abogada se complementan para brindar un servicio completo y profesional.</p>
+          <p style="margin-top:12px;"><strong>Que tengas a quien recurrir:</strong> Nuestro apoyo comprende desde la elección del programa hasta tu partida e incluye elección de seguro, alojamiento y eventualidades. En Nelson nuestro acompañamiento es presencial y en otras ciudades nuestro apoyo es remoto pero con la misma disponibilidad.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Cuánto cuesta estudiar en Nueva Zelanda?<span class="faq-icon">+</span></summary>
+        <div class="faq-content">
+          <p>Los costos varían según el tipo de programa y la institución. Como referencia aproximada:</p>
+          <ul>
+            <li><strong>Secundaria:</strong> Entre NZD $15,000 – $25,000 por año académico</li>
+            <li><strong>Cursos de inglés:</strong> Entre NZD $300 – $500 por semana</li>
+            <li><strong>Grados universitarios:</strong> Entre NZD $22,000 – $35,000 por año</li>
+            <li><strong>Posgrados:</strong> Entre NZD $26,000 – $40,000 por año</li>
+          </ul>
+          <p style="margin-top:12px;">Además de la matrícula, debes considerar alojamiento, seguro médico, alimentación y gastos personales. Te ayudo a calcular un presupuesto realista según tu programa específico.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Cuánto cuesta vivir en Nueva Zelanda?<span class="faq-icon">+</span></summary>
+        <div class="faq-content">
+          <p>El costo de vida en Nueva Zelanda varía significativamente según la ciudad donde vivas y tu estilo de vida. Ciudades como Auckland y Wellington son considerablemente más caras que ciudades más pequeñas como Nelson, Dunedin o Palmerston North.</p>
+          <p style="margin-top:12px;">Los gastos principales incluyen alojamiento, alimentación, transporte, teléfono e internet y gastos personales. El monto total depende de tus elecciones personales y necesidades específicas.</p>
+          <p style="margin-top:12px;">Para que tengas una referencia, Inmigración Nueva Zelanda requiere que demuestres fondos suficientes para mantenerte durante tus estudios. Generalmente solicitan evidencia de aproximadamente NZD $20,000 por año para gastos de vida, además de los costos de matrícula.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Necesito saber inglés para ir a Nueva Zelanda?<span class="faq-icon">+</span></summary>
+        <div class="faq-content">
+          <p>Depende del programa:</p>
+          <ul>
+            <li><strong>Cursos de inglés:</strong> No se requiere nivel previo, puedes empezar desde principiante.</li>
+            <li><strong>Secundaria:</strong> Generalmente se requiere un nivel intermedio, aunque algunos colegios ofrecen apoyo adicional.</li>
+            <li><strong>Universidad:</strong> Se requiere demostrar competencia en inglés mediante exámenes como IELTS (generalmente 6.0–6.5) o TOEFL.</li>
+          </ul>
+          <p style="margin-top:12px;">Si tu nivel no es suficiente, puedes tomar un curso de inglés previo a tu programa principal. Te asesoro sobre las mejores opciones según tu nivel actual.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Puedo trabajar mientras estudio?<span class="faq-icon">+</span></summary>
+        <div class="faq-content">
+          <p>Sí, en la mayoría de los casos:</p>
+          <ul>
+            <li><strong>Estudiantes universitarios:</strong> Pueden trabajar hasta 20 horas semanales durante el periodo lectivo y tiempo completo en vacaciones.</li>
+            <li><strong>Estudiantes de secundaria:</strong> No pueden trabajar (menores de 18 años).</li>
+            <li><strong>Cursos de inglés:</strong> Depende del tipo de curso y su duración. Algunos cursos de más de 14 semanas permiten trabajo de medio tiempo.</li>
+          </ul>
+          <p style="margin-top:12px;">Te explico en detalle las condiciones de trabajo según tu visa específica.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Cuánto tiempo toma el proceso de admisión y visa?<span class="faq-icon">+</span></summary>
+        <div class="faq-content">
+          <p>El proceso completo generalmente toma entre 3 y 6 meses:</p>
+          <ul>
+            <li><strong>Admisión a la institución:</strong> 2–6 semanas dependiendo de la institución y el programa.</li>
+            <li><strong>Visa de estudiante:</strong> 4–8 semanas en promedio, aunque puede variar.</li>
+          </ul>
+          <p style="margin-top:12px;">Te recomiendo comenzar el proceso al menos 6 meses antes de tu fecha de inicio deseada. Te ayudo a planificar el cronograma y cumplir con todos los plazos.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Dónde voy a vivir durante mis estudios?<span class="faq-icon">+</span></summary>
+        <div class="faq-content">
+          <p>Los estudiantes pueden elegir entre residencias, homestay o pisos compartidos. El homestay es especialmente recomendable para estudiantes secundarios, ya que brinda contención familiar y una mejor oportunidad para practicar inglés. Los universitarios suelen optar por residencias o casas compartidas, con valores que rondan los NZ$300–400 por semana.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Puedo quedarme a trabajar en Nueva Zelanda después de terminar mis estudios?<span class="faq-icon">+</span></summary>
+        <div class="faq-content">
+          <p>Sí, si eres estudiante universitario, Nueva Zelanda ofrece opciones de visa post-estudio:</p>
+          <ul>
+            <li><strong>Post-Study Work Visa:</strong> Te permite trabajar en Nueva Zelanda después de completar tu programa (duración depende del nivel de estudios y campo).</li>
+            <li><strong>Visa de trabajo:</strong> Si consigues un empleo relacionado con tu área de estudio, puedes aplicar a una visa de trabajo.</li>
+            <li><strong>Residencia:</strong> Después de trabajar cierto tiempo en ocupaciones específicas, puedes ser elegible para residencia permanente.</li>
+          </ul>
+          <p style="margin-top:12px;">Como abogada de inmigración, te oriento sobre estas opciones y cómo planificar tu camino desde el inicio de tus estudios.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Qué incluye tu servicio de asesoría?<span class="faq-icon">+</span></summary>
+        <div class="faq-content">
+          <p>Mi servicio incluye acompañamiento completo en todo el proceso:</p>
+          <ul>
+            <li>Asesoría personalizada para elegir el programa e institución ideal</li>
+            <li>Gestión completa del proceso de admisión</li>
+            <li>Orientación en el trámite de visa de estudiante</li>
+            <li>Verificación y coordinación del alojamiento</li>
+            <li>Preparación para tu llegada (seguro médico, checklist de viaje)</li>
+            <li>Apoyo continuo durante tu estadía en Nueva Zelanda</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-group reveal">
+      <h3 class="faq-group-title accent-serif">Sobre Honorarios</h3>
+
+      <details class="faq-item">
+        <summary>¿Cobramos por nuestros servicios?<span class="faq-icon">+</span></summary>
+        <div class="faq-content">
+          <p>Nuestro servicio de asesoría educacional es gratuito. También es gratuito el servicio de asistencia de admisión, alojamiento y viaje cuando la institución educativa trabaja con agentes.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Cuándo se aplican honorarios?<span class="faq-icon">+</span></summary>
+        <div class="faq-content">
+          <p>En las siguientes situaciones:</p>
+          <ul>
+            <li>La institución no trabaja con agentes (por ejemplo, algunas universidades o becas).</li>
+            <li>Servicios adicionales como SOP (Statement of Purpose), CV académico, traducciones o asesoría especializada.</li>
+            <li>El acompañamiento en Nueva Zelanda con acceso las 24 horas tiene un costo fijo.</li>
+            <li>Servicios migratorios profesionales, si corresponden.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Cómo sé si tendré que pagar algo?<span class="faq-icon">+</span></summary>
+        <div class="faq-content">
+          <p>Siempre te informamos antes de comenzar, de manera clara y por escrito. No hay costos ocultos.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="section">
+  <div class="container">
+    <div class="contact-wrap reveal">
+      <div class="contact-intro">
+        <span class="eyebrow" style="color:var(--gold);">¿Listo para comenzar?</span>
+        <h2 style="margin-top:10px;">Contáctanos hoy y da el primer paso hacia tu futuro en Nueva Zelanda</h2>
+        <p>Respondemos personalmente cada mensaje. Contame tu situación y te ayudo a definir el mejor camino.</p>
+        <span class="contact-whatsapp-note">O escribinos directo por <a href="https://wa.me/64275505656" target="_blank" rel="noopener" style="color:var(--gold);font-weight:600;">WhatsApp →</a></span>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="field">
+          <label for="cf-name">Nombre *</label>
+          <input type="text" id="cf-name" name="name" placeholder="Tu nombre completo" required>
+        </div>
+        <div class="field">
+          <label for="cf-email">Correo electrónico *</label>
+          <input type="email" id="cf-email" name="email" placeholder="tu@email.com" required>
+        </div>
+        <div class="field">
+          <label for="cf-message">Mensaje *</label>
+          <textarea id="cf-message" name="message" placeholder="Contame brevemente tu situación e intereses..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold">Enviar mensaje</button>
+        <p class="form-note">Al enviar, se abrirá WhatsApp con tu mensaje listo para enviar.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="Iter Capimus">
+        <p>Asesoría educativa independiente para estudiar en Nueva Zelanda. Atención personalizada en español, desde Nelson.</p>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/profile.php?id=61571225771773" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+        <a href="https://www.instagram.com/iter.capimus/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>
+        <div>© 2026 Iter Capimus. Todos los derechos reservados. · <a href="#">Política de Privacidad</a></div>
+        <div class="footer-license">Licencia de Abogada del Colegio de Abogados de Nueva Zelanda Nro 53090</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  hamburgerBtn.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('open');
+    hamburgerBtn.setAttribute('aria-expanded', isOpen);
+  });
+  mobileNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Close other open FAQ items within the same group (accordion behavior)
+  document.querySelectorAll('.faq-group').forEach(group => {
+    const items = group.querySelectorAll('details.faq-item');
+    items.forEach(item => {
+      item.addEventListener('toggle', () => {
+        if (item.open) {
+          items.forEach(other => { if (other !== item) other.open = false; });
+        }
+      });
+    });
+  });
+
+  // Contact form -> WhatsApp
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('cf-name').value.trim();
+    const email = document.getElementById('cf-email').value.trim();
+    const message = document.getElementById('cf-message').value.trim();
+    const text = `Hola María! Soy ${name} (${email}).\n\n${message}`;
+    window.open(`https://wa.me/64275505656?text=${encodeURIComponent(text)}`, '_blank');
+  });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
