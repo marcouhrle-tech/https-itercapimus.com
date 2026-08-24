@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Forum&display=swap" rel="stylesheet">
+<script src="https://www.google.com/recaptcha/api.js?render=6Ld09ZMtAAAAAGlMAOlzoUurof1AlEG363DfdGfn"></script>
 <style>
   /* ———— TOKENS ———— */
   :root{
@@ -371,7 +372,11 @@
     outline:none;border-color:var(--gold);background:rgba(255,255,255,0.1);
   }
   .contact-form .btn{margin-top:6px;width:100%;}
+  .contact-form .btn:disabled{opacity:0.6;cursor:default;transform:none;}
   .form-note{font-size:0.78rem;color:rgba(255,255,255,0.45);margin-top:2px;}
+  .form-status{font-size:0.85rem;margin-top:2px;min-height:1.2em;}
+  .form-status.is-success{color:var(--sage);}
+  .form-status.is-error,.form-status.is-warn{color:var(--gold);}
 
   /* ———— FOOTER ———— */
   footer{background:var(--near-black);color:rgba(255,255,255,0.7);padding:56px 0 28px;}
@@ -836,8 +841,9 @@
           <label for="cf-message">Mensaje *</label>
           <textarea id="cf-message" name="message" placeholder="Contame brevemente tu situación e intereses..." required></textarea>
         </div>
-        <button type="submit" class="btn btn-gold">Enviar mensaje</button>
-        <p class="form-note">Al enviar, se abrirá WhatsApp con tu mensaje listo para enviar.</p>
+        <button type="submit" class="btn btn-gold" id="cf-submit">Enviar mensaje</button>
+        <p class="form-status" id="cf-status" aria-live="polite"></p>
+        <p class="form-note">Al enviar, se abrirá WhatsApp con tu mensaje listo para enviar. Este sitio está protegido por reCAPTCHA; aplican la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Política de Privacidad</a> y los <a href="https://policies.google.com/terms" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Términos de Servicio</a> de Google.</p>
       </form>
     </div>
   </div>
@@ -891,12 +897,61 @@
     });
   });
 
-  // Contact form -> WhatsApp
-  document.getElementById('contactForm').addEventListener('submit', function(e){
+  // Contact form -> email lead capture (Web3Forms + reCAPTCHA) + WhatsApp
+  const cfForm = document.getElementById('contactForm');
+  const cfSubmit = document.getElementById('cf-submit');
+  const cfStatus = document.getElementById('cf-status');
+
+  const RECAPTCHA_SITE_KEY = '6Ld09ZMtAAAAAGlMAOlzoUurof1AlEG363DfdGfn';
+
+  function getRecaptchaToken(){
+    return new Promise((resolve, reject) => {
+      if (typeof grecaptcha === 'undefined') { reject(new Error('reCAPTCHA not loaded')); return; }
+      grecaptcha.ready(() => {
+        grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'contact' }).then(resolve, reject);
+      });
+    });
+  }
+
+  cfForm.addEventListener('submit', function(e){
     e.preventDefault();
     const name = document.getElementById('cf-name').value.trim();
     const email = document.getElementById('cf-email').value.trim();
     const message = document.getElementById('cf-message').value.trim();
+
+    cfStatus.textContent = '';
+    cfStatus.className = 'form-status';
+    cfSubmit.disabled = true;
+    cfSubmit.textContent = 'Enviando...';
+
+    const formData = new FormData(cfForm);
+    formData.append('access_key', 'a344531f-fe61-40d6-b416-7d87f5e90295');
+    formData.append('subject', `Nuevo contacto de ${name} — Iter Capimus`);
+
+    getRecaptchaToken()
+      .then(token => formData.append('g-recaptcha-response', token))
+      .catch(() => {})
+      .then(() => fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: formData
+      }))
+      .then(res => res.json())
+      .then(data => {
+        if (!data.success) throw new Error(data.message || 'Request failed');
+        cfStatus.textContent = 'Mensaje enviado. Te responderemos pronto.';
+        cfStatus.className = 'form-status is-success';
+        cfForm.reset();
+      })
+      .catch(() => {
+        cfStatus.textContent = 'No pudimos enviar el mensaje por acá, pero podés escribirnos directo por WhatsApp.';
+        cfStatus.className = 'form-status is-error';
+      })
+      .finally(() => {
+        cfSubmit.disabled = false;
+        cfSubmit.textContent = 'Enviar mensaje';
+      });
+
     const text = `Hola María! Soy ${name} (${email}).\n\n${message}`;
     window.open(`https://wa.me/64275505656?text=${encodeURIComponent(text)}`, '_blank');
   });
